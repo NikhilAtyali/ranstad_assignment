@@ -6,21 +6,17 @@ const HomeContainer = () => {
   const [cardData, setCardData] = useState([]);
   const [groupedDataObj, setGroupedDataObj] = useState({});
   const [selectedCard, setSelectedCard] = useState([]);
-  console.log(groupedDataObj, "groupedDataObj..................?????????????????????????????????/");
   const URL = "https://jsonplaceholder.typicode.com/albums";
 
   const groupedDataBuUserId = (data) => {
     const groupedData = {};
-
     data.forEach((item) => {
-      console.log(item, ">>>>>>>>>>>>>>>>>>>>..");
       const userId = item.userId;
       if (!groupedData[userId]) {
         groupedData[userId] = [];
       }
       groupedData[userId].push({ ...item, visited: false });
     });
-    // console.log(groupedData, "gropedData");
     setGroupedDataObj(groupedData);
   };
 
@@ -36,6 +32,7 @@ const HomeContainer = () => {
     };
     fetchData(URL);
   }, []);
+
   useEffect(() => {
     groupedDataBuUserId(cardData);
   }, [cardData]);
@@ -43,7 +40,6 @@ const HomeContainer = () => {
   const generateRandomUsername = (length) => {
     const letters = "abcdefghijklmnopqrstuvwxyz";
     let username = "";
-
     for (let i = 0; i < length; i++) {
       const randomIndex = Math.floor(Math.random() * letters.length);
       username += letters[randomIndex];
@@ -68,7 +64,6 @@ const HomeContainer = () => {
                 <UserCard
                   userId={userId}
                   userName={generateRandomUsername(8)}
-                  // itemCount={groupedDataObj[userId].length}
                   items={groupedDataObj[userId]}
                   setSelectedCard={setSelectedCard}
                 />
@@ -77,9 +72,12 @@ const HomeContainer = () => {
           })
         ) : (
           <>
-            
             <button onClick={() => setSelectedCard([])}>Back</button>
-            <ListItems items={selectedCard} groupedDataObj={groupedDataObj} setGroupedDataObj={setGroupedDataObj}/>
+            <ListItems
+              items={selectedCard}
+              groupedDataObj={groupedDataObj}
+              setGroupedDataObj={setGroupedDataObj}
+            />
           </>
         )}
         {/* </div> */}

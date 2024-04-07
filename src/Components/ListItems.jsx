@@ -1,27 +1,26 @@
-import React, { useState, useContext } from "react";
+import React, { useState} from "react";
 
 const ListItems = ({ items, groupedDataObj, setGroupedDataObj }) => {
-    console.log(items, "items ++++++++++++++++++++++++++++++++++++++++++++++");
-    console.log(groupedDataObj, 'groupedDataObjMMMMMMMMMMMM');
   const [clickedItemIds, setClickedItemIds] = useState([]);
 
   const onItemClickHandler = (id) => {
-    // Toggle clicked state for the item
     const updatedClickedItemIds = clickedItemIds.includes(id)
       ? clickedItemIds.filter((clickedId) => clickedId !== id)
       : [...clickedItemIds, id];
     setClickedItemIds(updatedClickedItemIds);
-    onItemClick(id); // Forward the click event to parent if needed
+    onItemClick(id);
   };
 
   const onItemClick = (item, ind) => {
-    
-    let modifiedGroupedDataObj = {...groupedDataObj};
-    const objIndex = modifiedGroupedDataObj[item.userId].findIndex(obj=> obj.id === item.id);
-    
-    console.log(groupedDataObj, 'groupedDataObjjjjjjjjjjjjjjjjjjjjjjjjjj', modifiedGroupedDataObj[item.userId][objIndex],'indexxxxxxxxx', objIndex);
-    modifiedGroupedDataObj[item.userId][objIndex] = {...modifiedGroupedDataObj[item.userId][objIndex], visited: true} 
-    console.log(modifiedGroupedDataObj, 'modifiedGroupedDataObj////////////////////');
+    let modifiedGroupedDataObj = { ...groupedDataObj };
+    const objIndex = modifiedGroupedDataObj[item.userId].findIndex(
+      (obj) => obj.id === item.id
+    );
+
+    modifiedGroupedDataObj[item.userId][objIndex] = {
+      ...modifiedGroupedDataObj[item.userId][objIndex],
+      visited: true,
+    };
     setGroupedDataObj(modifiedGroupedDataObj);
   };
   return (
@@ -34,9 +33,7 @@ const ListItems = ({ items, groupedDataObj, setGroupedDataObj }) => {
               key={item.id}
               onClick={() => onItemClickHandler(item, ind)}
               style={{
-                backgroundColor: item.visited 
-                  ? "lightblue"
-                  : "transparent",
+                backgroundColor: item.visited ? "lightblue" : "transparent",
                 cursor: "pointer",
               }}
             >
