@@ -1,5 +1,5 @@
-import React, { useState} from "react";
-
+import React, { useState } from "react";
+import styles from "./ListItems.css";
 const ListItems = ({ items, groupedDataObj, setGroupedDataObj }) => {
   const [clickedItemIds, setClickedItemIds] = useState([]);
 
@@ -24,12 +24,12 @@ const ListItems = ({ items, groupedDataObj, setGroupedDataObj }) => {
     setGroupedDataObj(modifiedGroupedDataObj);
   };
   return (
-    <div className="itemsList">
-      <h3>Items List:</h3>
-      <ul>
+    <div className="list">
+      <ul className="list_ul">
         {items &&
           items.map((item, ind) => (
             <li
+              className="listItem"
               key={item.id}
               onClick={() => onItemClickHandler(item, ind)}
               style={{

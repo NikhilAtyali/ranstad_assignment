@@ -1,6 +1,6 @@
 import React from "react";
 
-import logo from "../logo.svg";
+import logo from "../mail-1008.svg";
 import styles from "./CardStyles.css";
 const UserCard = ({ userId, userName, items, setSelectedCard }) => {
   const handleClick = () => {
@@ -10,9 +10,9 @@ const UserCard = ({ userId, userName, items, setSelectedCard }) => {
   return (
     <div className="cardContainer" onClick={handleClick}>
       <div className="countContainer">
-        <h2 className="count">
+        <span className="count">
           {items?.filter((item) => !item.visited)?.length}
-        </h2>
+        </span>
       </div>
       <div className="imageContainer">
         <img src={logo} className="App-logo" alt="logo" />

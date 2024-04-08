@@ -1,0 +1,10 @@
+.list {
+    margin-left: 364px;
+}
+.list_ul {
+    list-style: none;
+}
+.listItem {
+    border: 1px solid black;
+    padding: 5px;
+}
