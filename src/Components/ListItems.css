@@ -1,10 +1,23 @@
 .list {
-    margin-left: 364px;
+  margin-left: 22.75rem;
 }
 .list_ul {
-    list-style: none;
+  list-style: none;
+  padding: 0;
 }
 .listItem {
-    border: 1px solid black;
-    padding: 5px;
+  border: 1px solid black;
+  padding: 0.3125rem;
+  width: 18.75rem;
+  height: auto;
+}
+
+@media only screen and (max-width: 48rem) {
+  .list {
+    margin-left: 0;
+  }
+
+  .listItem {
+    width: 100%;
+  }
 }

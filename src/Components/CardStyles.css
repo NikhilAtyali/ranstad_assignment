@@ -1,19 +1,19 @@
 .homeContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  margin: 80px;
+  gap: 1.25rem;
+  margin: 5rem;
 }
 .cardContainer {
   /* border: 1px solid red; */
-  width: 180px;
-  height: 225px;
+  width: 11.25rem;
+  height: 14.06rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   background-color: lightblue;
-  padding: 10px;
+  padding: 0.626rem;
 }
 .countContainer {
   position: relative;
@@ -22,48 +22,46 @@
   display: flex;
   /* border: 1px solid blue; */
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 1.875rem;
+  width: 1.875rem;
   background-color: #625df5;
 }
 
 .count {
   position: absolute;
   color: white;
-  font-size: 18px;
-  top: 2px;
-  right: 5px;
-  /* background-color: yellow;
-    border-radius: 50%; */
+  font-size: 1.125rem;
+  top: 0.125rem;
+  right: 0.3125rem;
 }
 
 .imageContainer {
   border: 1px solid black;
   border-radius: 50%;
-  width: 125px;
-  height: 125px;
+  width: 7.8125rem;
+  height: 7.8125rem;
   background-color: white;
 }
 
 .userId {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
 }
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 50px;
-  padding-right: 50px;
-  height: 60px;
+  padding-left: 3.125rem;
+  padding-right: 3.125rem;
+  height: 3.75rem;
   background: lightgrey;
 }
 .navLogo {
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
 }
 .search {
-  height: 24px;
+  height: 1.5rem;
 }
 .listContainer {
 }
