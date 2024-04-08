@@ -1,5 +1,6 @@
 * This is an assignment for Randstad Risemart
 * To run the app in your local, clone repository "https://github.com/NikhilAtyali/ranstad_assignment.git" and run npm i, and npm start
+* Live url "https://nikhil-randstad-assignment.netlify.app/"
 * it is displaying cards with random username concated with user_id
 * On clicking the card it will take user to list of titles assosciated with that card
 * On clicking title the it will be marked as read aand background color will change 
